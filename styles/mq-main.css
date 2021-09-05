@@ -1,0 +1,8 @@
+@media only screen and (min-width: 400px) and (max-width: 600px) {
+    .restaurant-rec {
+        width: 80% !important;
+    }
+    h1.main-header {
+        padding-top: 110px;
+    }
+}
