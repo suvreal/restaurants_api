@@ -135,7 +135,7 @@ body {
     text-align: center;
     width: 100%;
     height: auto;
-    padding: 10px 0px 35px 0px;
+    padding: 35px 0px 35px 0px;
     background-color: #e8e8e8;
     border-radius: 2px;
     color: #131313;
@@ -145,6 +145,7 @@ body {
     margin-top: 55px;
     text-decoration: none;
     user-select: text;
+    border-top: 3px solid #195c82;
 }
 
 .food-detail-elem {
