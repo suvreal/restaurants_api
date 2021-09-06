@@ -15,7 +15,7 @@
 
 
 <?php
-error_reporting(E_ALL);
+error_reporting(0);
 // Call all records to write out
 include("api_handler.php");
 performAllRecordQuery("https://private-anon-81fcb7ce9d-idcrestaurant.apiary-mock.com/restaurant");
