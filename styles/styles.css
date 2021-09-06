@@ -3,7 +3,8 @@
 body {
     font-family: sans-serif;
     user-select: none;
-    background-color: #2b79a5;
+    background: rgb(43, 121, 165);
+    background: radial-gradient(circle, rgba(43, 121, 165, 1) 0%, rgba(31, 91, 125, 1) 100%, rgba(255, 255, 255, 1) 100%);
 }
 
 .display-none {
@@ -21,9 +22,15 @@ body {
     top: 0px;
     left: 0px;
     background-color: #d6d6d6;
-    -webkit-box-shadow: inset -15px -38px 81px -39px rgba(0, 0, 0, 0.44);
+    -webkit-box-shadow: inset -15px -38px 81px -39px rgb(0 0 0 / 44%);
     -moz-box-shadow: inset -15px -38px 81px -39px rgba(0, 0, 0, 0.44);
-    box-shadow: inset -15px -38px 81px -39px rgba(0, 0, 0, 0.44);
+    box-shadow: inset -15px -38px 81px -39px rgb(0 0 0 / 44%);
+    background-color: #efefef;
+    opacity: 1;
+    background-image: repeating-radial-gradient( circle at 0 0, transparent 0, #f9f9f9 10px), repeating-linear-gradient( #ececec55, #ececec);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    animation-name: loadDecorativeHeader;
+    animation-duration: 0.25s;
 }
 
 #api-return-data-raw {
@@ -90,6 +97,9 @@ body {
     text-transform: uppercase;
     margin: 5px;
     text-decoration: none;
+    position: relative;
+    animation-name: loadRecordElements;
+    animation-duration: 0.25s;
 }
 
 .restaurant-link {
@@ -133,7 +143,7 @@ body {
 .restaurant-detail-rec {
     display: block;
     text-align: center;
-    width: 100%;
+    width: 56%;
     height: auto;
     padding: 35px 0px 35px 0px;
     background-color: #e8e8e8;
@@ -142,23 +152,39 @@ body {
     box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     text-transform: uppercase;
-    margin-top: 55px;
+    margin-top: 55px !important;
     text-decoration: none;
     user-select: text;
     border-top: 3px solid #195c82;
+    margin: auto;
 }
 
 .food-detail-elem {
     padding: 1px 0px 1px 0px;
 }
 
+.food-date .material-icons {
+    width: 100%;
+    font-weight: 500 !important;
+    font-size: 30px !important;
+    color: #ffffff;
+}
+
+.food-note .material-icons {
+    color: #2d2d2d;
+    position: relative;
+    top: 5px;
+    padding: 0px 5px 0px 0px;
+    font-size: 28px !important;
+    text-shadow: 1px 1px 1px #bdbdbd;
+}
+
 .food-row {
-    width: 95%;
+    width: 51%;
     background: #dedede;
     padding: 10px 0px 10px 0px;
     margin: auto;
     border-radius: 2px;
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
 }
 
@@ -178,16 +204,27 @@ body {
 .food-note {
     font-style: italic;
     margin-bottom: 2px;
+    padding: 25px 0px 25px;
+    border-bottom: 2px solid #d0d0d0;
+    background: #dedede;
 }
 
 .food-date {
-    font-weight: 700;
+    font-weight: 400;
     padding: 10px;
-    background: transparent;
+    background: #195c82;
+    color: white;
     border-radius: 2px;
     margin-bottom: 20px;
     box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
     font-size: 20px;
+    margin-top: 21px;
+}
+
+.price-type {
+    text-transform: none;
+    width: auto;
+    display: inline;
 }
 
 
@@ -219,11 +256,12 @@ h2.main-header:hover a .material-icons {
 }
 
 h2.main-header:hover a {
-    text-decoration: underline;
+    /*text-decoration: underline;*/
 }
 
 h2.main-header a {
     color: #2c2c2c;
+    text-shadow: 1px 1px 1px #a5a5a5;
     text-decoration: none;
 }
 
@@ -250,5 +288,49 @@ h2.main-header a {
     text-decoration: underline;
 }
 
+.err-mess {
+    position: absolute;
+    z-index: 9999;
+    color: rgb(11, 54, 90);
+}
 
-/*Detail styles*/
+
+/*Animations*/
+
+@keyframes loadRecordElements {
+    0% {
+        top: 200px;
+    }
+    25% {
+        top: 150px;
+    }
+    50% {
+        top: 100x;
+    }
+    100% {
+        top: 50px;
+    }
+}
+
+@keyframes loadDecorativeHeader {
+    0% {
+        opacity: 0.5;
+        background-image: repeating-radial-gradient( circle at 0 0, transparent 0, #f9f9f9 90px), repeating-linear-gradient( #ececec55, #ececec);
+    }
+    25% {
+        opacity: 0.6;
+        background-image: repeating-radial-gradient( circle at 0 0, transparent 0, #f9f9f9 110px), repeating-linear-gradient( #ececec55, #ececec);
+    }
+    50% {
+        opacity: 0.7;
+        background-image: repeating-radial-gradient( circle at 0 0, transparent 0, #f9f9f9 50px), repeating-linear-gradient( #ececec55, #ececec);
+    }
+    75% {
+        opacity: 0.8;
+        background-image: repeating-radial-gradient( circle at 0 0, transparent 0, #f9f9f9 150px), repeating-linear-gradient( #ececec55, #ececec);
+    }
+    100% {
+        opacity: 0.9;
+        background-image: repeating-radial-gradient( circle at 0 0, transparent 0, #f9f9f9 20px), repeating-linear-gradient( #ececec55, #ececec);
+    }
+}

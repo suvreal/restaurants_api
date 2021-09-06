@@ -5,4 +5,11 @@
     h1.main-header {
         padding-top: 110px;
     }
+    .restaurant-detail-rec {
+        width: 100% !important;
+    }
+    .food-note .material-icons {
+        top: -5px !important;
+        width: 100%;
+    }
 }
