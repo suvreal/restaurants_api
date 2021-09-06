@@ -18,7 +18,7 @@
 /*On get input get API record data*/
 /**********************************/
 
-error_reporting(E_ALL);
+error_reporting(0);
 
 if(!empty($_GET)){
     if(isset($_GET["record_id"]) && isset($_GET["name"]) && isset($_GET["lng"]) && isset($_GET["lat"])){
